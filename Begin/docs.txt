@@ -1,0 +1,8 @@
+Data Type :-
+1.String
+2.Number - a. Integer
+	   b. Float
+
+3.Boolean - True, False
+4.Array & Slices
+5.Map (key value pair)
