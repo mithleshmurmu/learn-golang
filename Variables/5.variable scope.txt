@@ -5,3 +5,74 @@ Block :-
 -> Inner blocks can access variables declared within outer blocks.
 -> Outer blocks cannot access variables declared within inner blocks.
 
+{
+// outer block
+	{
+	// inner block
+	}
+}
+
+
+func main() {
+city := "London"
+{
+	country := "UK"
+	fmt.Println(country)
+	fmt.Println(city)
+}
+fmt.Println(country)
+fmt.Println(city)
+}
+
+>>> go run main.go
+
+// If we remove that line it works fine.
+func main() {
+city := "London"
+{
+	country := "UK"
+	fmt.Println(country)
+	fmt.Println(city)
+}
+fmt.Println(city)
+}
+
+>>> go run main.go
+
+----------------------------------------
+Local vs Global Variables :-
+
+Local :- 
+-> Declared inside a function or a block
+-> not accessible outside the function or the block
+-> can also be declared inside looping and conditional statements
+
+package main
+import ("fmt")
+
+func main() {
+	name := "Lisa"
+	fmt.Println(name)
+}
+
+>>> go run main.go
+    Lisa
+--------------------------------------------
+Global Variables :-
+-> Declared outside of a function or a block
+-> Available throughout the lifetime of a program
+-> declared at the top of the program outside all functions or blocks
+-> can be accessed from any part of the program.
+
+
+package main
+import ("fmt")
+
+var name string = "Lisa"
+
+func main() {
+	fmt.Println(name)
+}
+
+>>> go run main.go
+    Lisa
