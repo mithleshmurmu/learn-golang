@@ -1,0 +1,40 @@
+Zero values :-
+Declaring a new variable, but not necessary initializing the value, the variable is given a default value, and this value is known as zero values and depends on the data type of variable.
+
+bool - false
+int - 0
+float - 0.0
+string - ""	[empty string]
+pointers, functions, - nil
+interfaces, maps
+
+
+-------------------------------------------
+zero values - int
+
+package main
+import "fmt"
+
+func main() {
+	var i int
+	fmt.Printf("%d",i)
+}
+
+>>> go run main.go
+    0
+
+-------------------------------
+zero values - int
+
+package main
+import "fmt"
+
+func main() {
+	var f1 float64
+	fmt.Printf("%.2f",f1)
+}
+
+>>> go run main.go
+    0.00
+
+

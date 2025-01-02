@@ -1,0 +1,112 @@
+Constants :- value cannot be modified
+
+Syntax :- 
+const <const name> <data type> = <value>
+
+
+Two type of constants :-
+Typed and Untyped
+
+Untyped constant :- 
+-> constants are untyped unless they are explicitly given a type at declaration.
+-> allow for flexibility.
+
+E.g. :-
+const age = 12		[ data type not specify ]
+const h_name, h_age = "Hermione", 12
+
+
+Typed constant :-
+-> constants are typed when you explicitly specify the type in the declaration.
+-> flexibility that comes with untyped constants is lost.
+
+E.g. :-
+const name string = "Harry Potter"
+const age int = 12
+-----------------------------------------------------
+Understanding constants :-
+
+package main
+import "fmt"
+
+func main() {
+	const name = "Harry Potter"
+	const is_muggle = false
+	const age = 12
+
+	fmt.Printf("%v: %T \n", name, name)
+	fmt.Printf("%v: %T \n", is_muggle, is_muggle)
+	fmt.Printf("%v: %T \n", age, age)
+}
+
+>>> go run main.go
+    Harry Potter: string
+    false: bool
+    12: int
+
+// now we try to change the value of constants
+
+package main
+import "fmt"
+
+func main() {
+	const name = "Harry Potter"
+	name = "Hermione Granger"
+	fmt.Printf("%v: %T \n", name, name)
+}
+
+>>> go run main.go
+    Error: cannot assign to name (declared const)
+
+// cannot declare constant and not initialise data value, and we try to assign data value later on , we can't do something like this. If we do this we get an error. THE concept of default or zero values not applied here. 
+
+
+package main
+import "fmt"
+
+func main() {
+	const name
+	name = "Hermione Granger"
+	fmt.Printf("%v: %T \n", name, name)
+}
+
+>>> go run main.go
+    missing value in const declaration,
+    undefined: name
+
+
+// THE shorthand declaration will not work for constants.
+
+
+package main
+import "fmt"
+
+func main() {
+	const name := "Hermione Granger"
+	fmt.Printf("%v: %T \n", name, name)
+}
+
+>>> go run main.go
+    Error: syntax error: unexpected :=, expecting =
+
+
+--------------------------------------------------------
+
+Use cases of constants :-
+
+package main
+import "fmt"
+
+const PI float64 = 3.14	//global constant
+
+func main() {
+	var radius float64 = 5.0
+	var area float64
+	area = PI * radius * radius
+	fmt.Printf("Area of circle is : ", area)
+
+}
+
+>>> go run main.go
+    Area of circle is : 78.5
+	
