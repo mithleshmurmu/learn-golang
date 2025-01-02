@@ -1,0 +1,22 @@
+Kinds of Data type :-
+Numbers :-
+1.int
+	uint - unsigned integer (only +ve numbers including 0)
+	int - signed integer (both +ve and -ve numbers)
+2.float
+	float32
+	float64
+3.string	(16 bytes)
+4.bool	- true/false
+5.Arrays & Slices
+
+--------------------------------------
+Variables :-
+Syntax :- 
+var <variable-name> <data-type> = <value>
+
+var s string = "Hello World"
+var i int = 100
+var b bool = false
+var f float64 = 77.90
+var f float32 = 77.90

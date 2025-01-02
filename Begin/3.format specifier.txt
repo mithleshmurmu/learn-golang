@@ -1,0 +1,51 @@
+Format Specifier :-
+
+Printf	Formatted input output
+fmt.Printf("Template string %s", Object args(s))
+
+Printf - format specifier
+
+%v - formats the value in a default format.
+
+var name string = "KodeKloud"
+fmt.Printf("Nice to see you here, at %v",name)
+
+>>> Nice to see you here, at KodeKloud
+
+
+%d - formats decimal integers.
+
+var grades int = 42
+fmt.Printf("Marks: %d", grades)
+
+>>> Marks: 42
+
+
+package main
+import "fmt"
+
+func main() {
+	var name string = "Joe"
+	var i int = 78
+	fmt.Printf("Hey, %v! You have score %d/100 in Physics", name, i)
+}
+
+>>> go run main.go
+    Hey, Joe! You have score 78/100 in Physics
+
+
+Commonly used Printf-format specifiers :-
+
+%v - default format
+%T - type of the value
+%d - integers
+%c - charceter
+%q - quoted characters/string
+%s - plain string
+%t - true or false
+%f - floating numbers
+%.2f - floating numbers upto 2 decimal places
+
+
+
+
