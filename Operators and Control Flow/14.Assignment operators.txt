@@ -1,0 +1,110 @@
+Assignment Operators :-
+
+=	-> assign
++=	-> add and assign
+-=	-> subtract and assign
+*=	-> multiply and assign
+/=	-> divide and assign quotient
+%=	-> divide and assign modulus
+
+--------------------------------------------------
+assign ( = ) -> assigns left operand with the value to the right.
+
+package main
+import "fmt"
+
+func main() {
+	var x int = 10
+	var y int
+	y = x
+	fmt.Println(y)
+}
+
+>>> go run main.go
+    10
+
+------------------------------------------------------
+
+add and assign ( += ) -> assigns left operand with the addition result
+		      -> x += y means x = x + y
+
+package main
+import "fmt"
+
+func main() {
+	var x, y int = 10, 20
+	x += y
+	fmt.Println(x)
+}
+
+>>> go run main.go
+    30
+
+-----------------------------------------------------------
+
+subtract and assign ( -= ) -> assigns left operand with the subtraction result.
+			   -> x -= y means x = x - y
+
+package main
+import "fmt"
+
+func main() {
+	var x, y int = 10, 20
+	x -= y
+	fmt.Println(x)
+}
+
+>>> go run main.go
+    -10
+
+----------------------------------------------------------
+
+multiply and assign ( *= ) -> assigns left operand with the multiplication result
+			   -> x *= y means x = x * y
+
+package main
+import "fmt"
+
+func main() {
+	var x, y int = 10, 20
+	x *= y
+	fmt.Println(x)
+}
+
+>>> go run main.go
+    200
+-------------------------------------------------------
+
+divide and assign ( /= ) -> assigns left operand with the quotient of the 					division.
+			 -> x /= y means x = x / y
+
+package main
+import "fmt"
+
+func main() {
+	var x, y int = 200, 20
+	x /= y
+	fmt.Println(x)
+}
+
+>>> go run main.go
+    10
+
+-------------------------------------------------------------------
+
+divide and assign modulus ( %= ) -> assigns left operand with the remainder of 						the division.
+				 -> x %= y means x = x % y
+
+package main
+import "fmt"
+
+func main() {
+	var x, y int = 210, 20
+	x %= y
+	fmt.Println(x)
+}
+
+>>> go run main.go
+    10s
+
+
