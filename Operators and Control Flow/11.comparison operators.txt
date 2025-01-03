@@ -1,1 +1,99 @@
+Comparison Operator :-
+
+-> compare two operands and yield a Boolean value.
+-> allow values of the same data type for comparisons.
+-> common comparisons -
+	- Does one string match another ?
+	- Are two numbers the same ?
+	- Is one number greater than another ?
+----------------------------------------------------------
+
+Equal to ( == )	-> returns True when the values are equal.
+
+package main
+import "fmt"
+
+func main() {
+	var city string = "Kolkata"
+	var city_2 string = "Calcutta"
+	fmt.Println(city == city_2)
+}
+
+>>> go run main.go
+    false
+-------------------------------------------------------
+
+Not equal to ( != ) -> returns True when the values are not equal.
+
+
+package main
+import "fmt"
+
+func main() {
+	var city string = "Kolkata"
+	var city_2 string = "Calcutta"
+	fmt.Println(city != city_2)
+}
+
+>>> go run main.go
+    true
+
+---------------------------------------------------------------
+
+less than ( < ) -> returns True when the left operator is lesser than the right operand.
+
+package main
+import "fmt"
+
+func main() {
+	var a,b int = 5, 10
+	fmt.Println(a < b)
+}
+
+>>> go run main.go
+    true
+------------------------------------------------------------
+
+less than or equal to ( <= ) -> returns True when the left operand is lesser or equal to the right operand.
+
+package main
+import "fmt"
+
+func main() {
+	var a,b int = 10, 10
+	fmt.Println(a <= b)
+}
+
+>>> go run main.go
+    true
+
+----------------------------------------------------------------
+
+greater than ( > ) -> returns True when the left operand is greater than the right operand.
+
+package main
+import "fmt"
+
+func main() {
+	var a, b int = 20, 10
+	fmt.Println(a > b)
+}
+
+>>> go run main.go
+    true
+
+----------------------------------------------------------------------
+
+greater than or equal to ( >= ) -> returns True when the left operand is greater or equal to the right operand.
+
+package main
+import "fmt"
+
+func main() {
+	var a, b int = 20, 20
+	fmt.Println(a >= b)
+}
+
+>>> go run main.go
+    true
 
