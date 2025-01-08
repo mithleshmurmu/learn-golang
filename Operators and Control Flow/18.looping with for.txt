@@ -1,0 +1,105 @@
+Loop :-
+
+for loop :-
+Syntax :-
+
+for initialization; condition; post {
+	// statements
+}
+
+for i := 1; i <= 3; i++ {
+	fmt.Println("Hello World")
+}
+
+-- -- -- -- -- -- -- -- -- -- 
+
+package main
+import "fmt"
+
+func main() {
+	for i := 1; i <= 5; i++ {
+		fmt.Println(i*i)
+	}
+}
+
+>>> go run main.go
+    1
+    4
+    9
+    16
+    25
+-- -- -- -- -- -- -- -- -- -- -- --
+package main
+import "fmt"
+
+func main() {
+	i := 1
+	for i <= 5 {
+		fmt.Println(i*i)
+		i += 1
+	}
+}
+
+>>> go run main.go
+    1
+    4
+    9
+    16
+    25
+
+----------------------------------------------------
+
+infinite loop :-
+
+package main
+import "fmt"
+
+func main() {
+	sum := 0
+	for {
+		sum++ // repeated forever
+	}
+	fmt.Println(sum) // never reached
+}
+
+------------------------------------------------------
+
+Break & Continue :-
+
+break statement -> the break statement ends the loop immediately when it is 		encountered.
+
+package main
+import "fmt"
+
+func main() {
+	for i := 1; i <= 5; i++ {
+		if i ==3 {
+			break
+		}
+		fmt.Println(i)
+	}
+}
+
+>>> go run main.go
+    1
+    2
+-- -- -- -- -- -- -- -- -- -- -- -- -- 
+continue statement -> the continue statement skips the current iteration 		of loop and continues with the next iteration.
+
+package main
+import "fmt"
+
+func main() {
+	for i := 1; i <= 5; i++ {
+		if i ==3 {
+			continue
+		}
+		fmt.Println(i)
+	}
+}
+
+>>> go run main.go
+    1
+    2
+    4
+    5
