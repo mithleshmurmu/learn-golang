@@ -1,0 +1,131 @@
+Bitwise Operators :-
+
+bitwise AND	- &
+bitwise OR	- |
+bitwise XOR	- ^
+right shift	- >>
+left shift	- <<
+
+------------------------------------------------
+
+bitwise AND ( & ) -> takes two numbers as operands and does AND on every bit of 	two numbers.
+
+12 = 0000 1100 (in binary)
+25 = 0001 1001 (in binary)
+
+	0 0 0 0 1 1 0 1
+  &	0 0 0 1 1 0 0 1
+	
+	0 0 0 0 1 0 0 0 = 8 (in decimal)
+
+
+package main
+import "fmt"
+
+func main() {
+	var x, y int = 12,25
+	z := x & y
+	fmt.Println(z)
+}
+
+>>> go run main.go
+    8
+
+------------------------------------------------------
+
+bitwise OR ( | ) -> takes two numbers as operands and does OR on every bit of 	two numbers.
+
+12 = 0000 1100 (in binary)
+25 = 0001 1001 (in binary)
+
+	0 0 0 0 1 1 0 1
+  |	0 0 0 1 1 0 0 1
+
+	0 0 0 1 1 1 0 1 = 29 (in decimal)
+
+package main
+import "fmt"
+
+func main() {
+	var x, y int = 12,25
+	z := x | y
+	fmt.Println(z)
+}
+
+>>> go run main.go
+    29
+
+------------------------------------------------------
+
+bitwise XOR ( ^ ) -> takes two numbers as operands and does XOR on every bit of 	two numbers.
+		  -> the results of XOR is 1 if the two bits are opposite.
+
+12 = 0000 1100 (in binary)
+25 = 0001 1001 (in binary)
+
+	0 0 0 0 1 1 0 0
+  ^	0 0 0 1 1 0 0 1
+
+	0 0 0 1 0 1 0 1 = 21 (in decimal)
+
+
+package main
+import "fmt"
+
+func main() {
+	var x, y int = 12,25
+	z := x ^ y
+	fmt.Println(z)
+}
+
+>>> go run main.go
+    21
+
+-------------------------------------------------------
+
+left shift ( << ) -> shifts all bits towards left by a certain number of 				specified bits.
+		  -> The bits positions that have been vacated by the left shift 			operator are filled with 0.
+
+212 = 1101 0100 (in binary)
+
+	212 << 1
+
+ 	 1101 0100
+	1101 0100 0 = 424 (in decimal)
+
+
+package main
+import "fmt"
+
+func main() {
+	var x int = 212
+	z := x << 1
+	fmt.Println(z)
+}
+
+>>> go run main.go
+    424
+--------------------------------------------------------
+
+right shift ( >> ) -> shifts all bits towards right by a certain number of 				specified bits.
+		   -> excess bits shifted off to the right are discarded.
+
+212 = 1101 0100 (in binary)
+
+	212 >> 2
+
+ 	1101 0100
+	001101 0100 = 53 (in decimal)
+
+
+package main
+import "fmt"
+
+func main() {
+	var x int = 212
+	z := x >> 2
+	fmt.Println(z)
+}
+
+>>> go run main.go
+    53
