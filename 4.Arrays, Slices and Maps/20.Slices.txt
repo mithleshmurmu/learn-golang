@@ -1,0 +1,133 @@
+Slices :-
+
+-> continuous segment of an underlying array.
+-> variable typed (element can be added or removed)
+-> more flexible
+
+Components of a Slice :-
+
+pointer -> used to point the first element of the array.
+length - len() -> number of elements it contains.
+capacity - cap() -> numbers of elements in the underline array counting from the 		first element in the slice.
+
+------------------------------------------------------
+Declaring and initializing a slice :-
+
+	<slice-name> := [] <data-type> {values}
+	grades := [] int {10,20,30}
+
+
+package main
+import "fmt"
+
+func main() {
+	slice := [] int {10,20,30}
+	fmt.Println(slice)
+	
+}
+
+>>> go run main.go
+    [ 10 20 30 ]
+
+	
+	underlying array
+	  ----------
+	  |   10   |   0
+   	  ----------
+     	  |   20   |   1
+	  ----------
+	  |   30   |   2
+   	  ----------
+     	  |   97   |   3
+	  ----------
+	  |   54   |   4
+   	  ----------
+     	  |   60   |   5
+	  ----------
+   
+array[start_index : end_index]
+array[0 : 3]
+=> index - 0,1,2	// 3 is not included
+
+array[1 : 6]
+=> index - 1,2,3,4,5
+
+array[ : 4]
+=> index - 0,1,2,3
+
+array[ : ]
+=> index - 0,1,2,3,4,5
+
+
+
+package main
+import "fmt"
+
+func main() {
+	arr := [10] int {10,20,30,40,50,60,70,80,90,100}
+	slice_1 := arr[1:8]
+	fmt.Println(slice_1)
+}
+
+>>> go run main.go
+    [ 20 30 40 50 60 70 80 ]
+
+
+
+package main
+import "fmt"
+
+func main() {
+	arr := [10] int {10,20,30,40,50,60,70,80,90,100}
+
+	slice := arr[1:8]
+	fmt.Println(slice)
+
+	sub_slice := arr[0:3]
+	fmt.Println(sub_slice)
+}
+
+>>> go run main.go
+    [ 20 30 40 50 60 70 80 ]
+    [ 20 30 40 ]
+
+-- -- -- -- -- -- -- -- -- -- ---
+	slice := make([] <data-type>, length, capacity)
+	slice := make([] int, 5, 10)
+
+
+
+package main
+import "fmt"
+
+func main() {
+	slice := make([] int, 5,8)
+	fmt.Println(slice)
+	fmt.Println(len(slice))
+	fmt.Println(cap(slice))
+
+}
+
+>>> go run main.go
+    [ 0 0 0 0 0 ]
+    5
+    8
+
+
+package main
+import "fmt"
+
+func main() {
+	arr := [10] int {10,20,30,40,50,60,70,80,90,100}
+
+	slice := arr[1:8]
+	fmt.Println(cap(arr))
+	fmt.Println(cap(slice))
+}
+
+>>> go run main.go
+    10
+    9
+
+
+    
