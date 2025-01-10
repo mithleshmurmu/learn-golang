@@ -1,0 +1,242 @@
+Arrays :- 
+
+An array is a collection of similar data elements stored at contiguous memory locations.
+
+Why we need arrays :-
+Instead of storing data at different variables. We can store using single variables.
+
+grade_chem	grade_math	grade_phy
+90		85		70
+
+
+grades 		90,85,70
+
+
+-- -- -- -- -- -- -- --
+-> fixed length
+-> elements should be of the same data type
+properties :-
+-> length - which denotes the number of elements of the arrays.
+-> capacity - number of elements that it can contain.
+[ In case of array length and capacity is same ]
+
+Array declaration :-
+Syntax :-
+	var <array-name> [<size-of-the-array>] <data-type>
+	var grades [5] int
+	var fruits [3] string
+
+-------------------------------------------------
+
+package main
+import "fmt"
+
+func main() {
+	var grades [5] int
+	fmt.Println(grades)
+}
+
+>>> go run main.go
+    [ 0 0 0 0 0 ]
+
+-- -- -- -- -- -- -- -- -- -- ---
+
+package main
+import "fmt"
+
+func main() {
+	var grades [5] int
+	fmt.Println(grades)
+	var grades [3] string
+	fmt.Println(fruits)
+
+}
+
+>>> go run main.go
+    [ 0 0 0 0 0 ]
+    [  ]
+
+-------------------------------------
+
+Array initialization :- 
+
+var grades [3] int = [3] int {10,20,30}
+
+shorthand declaration :-
+	grades := [3] int {10,20,30}
+
+	grades := [...] int {10,20,30}	// elipses - ... {three dots} we did not specify the size or length of arrays. The compiler will calculate the size of array implicitly based on the number of elements.
+
+package main
+import "fmt"
+
+func main() {
+	var fruits [2] string = [2] string {"apples","oranges"}
+	fmt.Println(fruits)
+
+	marks := [3] int {10,20,30}
+	fmt.Println(marks)
+
+	names := [...] string {"Rachel","Phoebe","Monica"}
+	fmt.Println(names)
+}
+
+>>> go run main.go
+    [ apples oranges ]
+    [ 10 20 30 ]
+    [ Rachel Phoebe Monica ]
+
+------------------------------------------------------
+Array Length:-
+
+len() -> The length of the array refers to the number of elements stored in the array.
+
+
+package main
+import "fmt"
+
+func main() {
+	var fruits [2] string = [2] string {"apples","oranges"}
+	fmt.Println(len(fruits))
+}
+
+>>> go run main.go
+    2
+
+-- -- -- -- -- -- -- -- -- -- --
+
+indexes in array :-
+
+gardes	:	90 86 76 42 85
+index	:	0  1  2  3  4
+
+	grades[1] => 86
+	grades[0] => 90
+
+
+index should lie between  0 <= index <= len-1
+
+package main
+import "fmt"
+
+func main() {
+	var fruits [5] string = [5] string 								{"apples","oranges","grapes","mango","papaya"}
+	fmt.Println(fruits[2])
+}
+
+>>> go run main.go
+    grapes
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- 
+package main
+import "fmt"
+
+func main() {
+	var fruits [5] string = [5] string 								{"apples","oranges","grapes","mango","papaya"}
+	fmt.Println(fruits[6])
+}
+
+>>> go run main.go
+    invalid array index 6 (out of bounds for 5 - element array)
+
+-- -- -- -- -- -- -- -- -- -- -- -- --
+package main
+import "fmt"
+
+func main() {
+	var grades [5] int = [5] int {90,80,70,80,97}
+	fmt.Println(grades)
+	grades[1] = 100
+	fmt.Println(grades)
+}
+
+>>> go run main.go
+    [ 90 80 70 80 97 ]
+    [ 90 100 70 80 97 ]
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+looping through an array :-
+
+for i := 0; i < len(grades); i++ {
+	fmt.Println(grades[i])
+}
+
+
+package main
+import "fmt"
+
+func main() {
+	var grades [5] int = [5] int {90,80,70,80,97}
+	for i := 0; i < len(grades); i++ {
+	fmt.Println(grades[i])
+	}
+}
+
+>>> go run main.go
+    90
+    80
+    70
+    80
+    97
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+looping through an array using range keyword :-
+
+for index, element := range grades {
+	fmt.Println(index, "=>", element)
+}
+
+
+package main
+import "fmt"
+
+func main() {
+	var grades [5] int = [5] int {90,80,70,80,97}
+	for index, element := range grades {
+		fmt.Println(index, "=>", element)
+	}
+}
+
+>>> go run main.go
+    0 => 90
+    1 => 80
+    2 => 70
+    3 => 80
+    4 => 97
+
+-----------------------------------------------
+
+Multidimensional Arrays :-
+
+   ---- ----
+0  | 2 | 4 |
+   ---------
+     0   1
+
+   ---------
+1  | 4 | 16 |
+   ----------
+      0   1
+
+   ----------
+2  | 8 | 64 |
+   ----------
+      0   1
+
+
+arr[2][1] => 64
+
+
+package main
+import "fmt"
+
+func main() {
+	arr := [3][2] int {{2,4}, {4,16}, {8,64}}
+	fmt.Println(arr[2][1])	// print first index of second element
+
+}
+
+>>> go run main.go
+    64
