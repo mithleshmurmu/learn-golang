@@ -255,3 +255,106 @@ func main() {
     6
 -- -- -- -- -- -- -- -- -- -- --
 
+slice = append(slice, anotherSlice...)
+
+package main
+import "fmt"
+
+func main() {
+	arr := [5] int{10, 20, 30, 40, 50}
+	slice := arr[:2]
+	arr_2 := [5] int {5, 15, 25, 35, 45}
+	slice_2 := arr_2[:2]
+	new_slice := append(slice, slice_2...)
+	fmt.Println(new_slice)
+}
+
+>>> go run main.go
+    [ 10 20 5 15 ]
+
+
+-- -- -- -- -- -- -- -- -- -- --
+Delete element from a Slice :-
+
+package main
+import "fmt"
+
+func main() {
+	arr := [5] int{10, 20, 30, 40, 50}
+	i := 2
+	fmt.Println(arr)
+	slice_1 := arr[:i]
+	slice_2 := arr[i+1:]
+	new_slice := append(slice_1, slice_2...)
+	fmt.Println(new_slice)
+}
+
+>>> go run main.go
+    [ 10 20 30 40 50 ]
+    [ 10 20 40 50 ]
+
+
+-- -- -- -- -- -- -- -- -- -- --
+Copying from a Slice :-
+
+func copy(dst, src []Type) int
+
+num := copy(dest_slice, src_slice)	// for this data type should be same
+
+package main
+import "fmt"
+
+func main() {
+	src_slice := [] int{10, 20, 30, 40, 50}
+	dest_slice := make([] int, 3)
+	num := copy(dest_slice, src_slice)
+	fmt.Println(dest_slice)
+	fmt.Println("Number of elements copied: ", num)
+}
+
+>>> go run main.go
+    [ 10 20 30 ]
+    Number of elements copied: 3
+
+-- -- -- -- -- -- -- -- -- -- --
+Looping through a Slice :-
+
+package main
+import "fmt"
+
+func main() {
+	arr := [] int{10, 20, 30, 40, 50}
+	for index, value := range arr {
+		fmt.Println(index, "=>", value)
+	}
+}
+	
+>>> go run main.go
+0 => 10
+1 => 20
+2 => 30
+3 => 40
+4 => 50
+-- -- -- -- -- -- -- -- -- -- --
+Use cases when don't need index or values :-
+
+package main
+import "fmt"
+
+func main() {
+	arr := [] int{10, 20, 30, 40, 50}
+	for _, value := range arr {
+		fmt.Println(value)
+	}
+}
+
+>>> go run main.go
+10
+20
+30
+40
+50
+
+
+
+
